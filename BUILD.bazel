@@ -46,12 +46,14 @@ sass(
 # https://bazelbuild.github.io/rules_nodejs/TypeScript.html
 ts_library(
     name = "compile",
-    srcs = ["index.tsx"],
+    srcs = [
+        "index.tsx",
+        "types.d.ts",
+    ],
     deps = [
         "@npm//@types/node",
         "@npm//@types/react",
         "@npm//@types/react-dom",
-        # "//path/to/other:library",
     ],
 )
 
@@ -59,7 +61,7 @@ filegroup(
     name = "index.js",
     srcs = ["compile"],
     # Change to es6_sources to get the 'prodmode' JS
-    output_group = "es6_sources",
+    output_group = "es5_sources",
 )
 
 # -------------
