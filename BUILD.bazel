@@ -8,8 +8,6 @@ exports_files(
 load("@npm_bazel_typescript//:index.bzl", "ts_library")
 load("@npm//live-server:index.bzl", "live_server")
 load("@npm//sass:index.bzl", "sass")
-
-# load("@npm//typescript:index.bzl", "tsc")
 load("@npm//webpack-cli:index.bzl", webpack = "webpack_cli")
 
 sass(
@@ -22,27 +20,6 @@ sass(
     data = ["styles.scss"],
 )
 
-# tsc(
-#     name = "compile",
-#     outs = ["index.js"],
-#     args = [
-#         "$(location index.tsx)",
-#         "$(location types.d.ts)",
-#         "--outDir",
-#         "$(RULEDIR)",
-#         "--lib",
-#         "es2015,dom",
-#         "--jsx",
-#         "react",
-#     ],
-#     data = [
-#         "index.tsx",
-#         "types.d.ts",
-#         "@npm//@types",
-#         "@npm//csstype",
-#     ],
-# )
-
 # https://bazelbuild.github.io/rules_nodejs/TypeScript.html
 ts_library(
     name = "compile",
@@ -54,6 +31,7 @@ ts_library(
         "@npm//@types/node",
         "@npm//@types/react",
         "@npm//@types/react-dom",
+        "@npm//csstype",
     ],
 )
 
@@ -61,7 +39,7 @@ filegroup(
     name = "index.js",
     srcs = ["compile"],
     # Change to es6_sources to get the 'prodmode' JS
-    output_group = "es5_sources",
+    output_group = "es6_sources",
 )
 
 # -------------
@@ -69,11 +47,14 @@ webpack(
     name = "bundle",
     outs = ["app.bundle.js"],
     args = [
-        "$(location index.js)",
+        "$(locations //:index.js)",
         "--config",
         "$(location webpack.config.js)",
         "-o",
         "$@",
+        "--mode",
+        "development",
+        "--hot",
     ],
     data = [
         "index.js",
