@@ -57,10 +57,10 @@
   resolved "https://registry.npm.taobao.org/@bazel/hide-bazel-files/download/@bazel/hide-bazel-files-1.0.0.tgz?cache=0&sync_timestamp=1576853487838&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40bazel%2Fhide-bazel-files%2Fdownload%2F%40bazel%2Fhide-bazel-files-1.0.0.tgz#779070dcb5ae121ff6c72d73bf3fb7bf68285d75"
   integrity sha1-d5Bw3LWuEh/2xy1zvz+3v2goXXU=
 
-"@bazel/ibazel@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@bazel/ibazel/-/ibazel-0.11.0.tgz#6879c8032f5bee81ca632456304c16525160f47f"
-  integrity sha512-UOSMb29SjjXrs7VTn6eOAO2anmAgUC3hrsKwW3XyFV4pQdd71d0wjRqz36Vao4ICWXZcv4C6mRuVH2VCfZmG1w==
+"@bazel/ibazel@0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@bazel/ibazel/-/ibazel-0.11.1.tgz#c07ceaded388f1e39d6aa732953e0dd04f3dbdf0"
+  integrity sha512-qAdEquFAudYyN+CYfLzvuRWNubdsh6C8+o5CiViUEfchq1HQM5Rs8xAOE3fzGsTZ1EUsvgca/PY0kn0VIxckBA==
 
 "@bazel/typescript@1.0.0":
   version "1.0.0"

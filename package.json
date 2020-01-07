@@ -3,7 +3,7 @@
   "devDependencies": {
     "@bazel/bazel": "2.0.0",
     "@bazel/buildifier": "0.29.0",
-    "@bazel/ibazel": "0.11.0",
+    "@bazel/ibazel": "0.11.1",
     "@bazel/typescript": "1.0.0",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
